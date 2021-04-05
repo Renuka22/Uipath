@@ -1,15 +1,4 @@
-﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Join_Datatables" mva:VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Join_Datatables_1"
- xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
- xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
- xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
- xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
- xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
- xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
- xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
- xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
- xmlns:sd="clr-namespace:System.Data;assembly=System.Data"
- xmlns:ui="http://schemas.uipath.com/workflow/activities"
- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Join_Datatables" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="934,1252" sap2010:WorkflowViewState.IdRef="Join_Datatables_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -57,28 +46,45 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This is a workflow which explains how to use the Join Datatables Activity. This activity enables you to combine values from two datatables according to specified rules." DisplayName="Join Datatables" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This is a workflow which explains how to use the Join Datatables Activity. This activity enables you to combine values from two datatables according to specified rules." DisplayName="Join Datatables" sap:VirtualizedContainerService.HintSize="494,1047" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="CustomersData" />
       <Variable x:TypeArguments="sd:DataTable" Name="OrdersData" />
       <Variable x:TypeArguments="sd:DataTable" Name="JoinResult" />
     </Sequence.Variables>
-    <ui:ExcelApplicationScope Password="{x:Null}" sap2010:Annotation.AnnotationText="First, we need to open Excel." DisplayName="Open Example Excel" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="Example.xlsx">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ExcelApplicationScope Password="{x:Null}" sap2010:Annotation.AnnotationText="First, we need to open Excel." DisplayName="Open Example Excel" sap:VirtualizedContainerService.HintSize="452,913" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="Example.xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <Sequence sap2010:Annotation.AnnotationText="We then read the two datatables required for the operation and store them into variables. In this case, one of the sheets in our workbook contains information on customers and one on orders." DisplayName="Read DataTables" sap2010:WorkflowViewState.IdRef="Sequence_3">
-              <ui:ExcelReadRange AddHeaders="True" DataTable="[CustomersData]" DisplayName="Read Customers Data" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Customers">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="418,773" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence sap2010:Annotation.AnnotationText="We then read the two datatables required for the operation and store them into variables. In this case, one of the sheets in our workbook contains information on customers and one on orders." DisplayName="Read DataTables" sap:VirtualizedContainerService.HintSize="376,322" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ExcelReadRange AddHeaders="True" DataTable="[CustomersData]" DisplayName="Read Customers Data" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Customers">
                 <ui:ExcelReadRange.Range>
                   <InArgument x:TypeArguments="x:String">
                     <Literal x:TypeArguments="x:String" Value="" />
                   </InArgument>
                 </ui:ExcelReadRange.Range>
               </ui:ExcelReadRange>
-              <ui:ExcelReadRange AddHeaders="True" DataTable="[OrdersData]" DisplayName="Read Orders Data" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" SheetName="Orders">
+              <ui:ExcelReadRange AddHeaders="True" DataTable="[OrdersData]" DisplayName="Read Orders Data" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" SheetName="Orders">
                 <ui:ExcelReadRange.Range>
                   <InArgument x:TypeArguments="x:String">
                     <Literal x:TypeArguments="x:String" Value="" />
@@ -86,7 +92,7 @@
                 </ui:ExcelReadRange.Range>
               </ui:ExcelReadRange>
             </Sequence>
-            <ui:JoinDataTables sap2010:Annotation.AnnotationText="The CustomerID column from the Customers sheet relates to the CustomerID column in the Orders sheet. In the wizard we define these two columns by using the column index for the first one, and the column name for the second one.  The Operation field is set to = (equals to)." DataTable1="[CustomersData]" DataTable2="[OrdersData]" DisplayName="Join Data Tables" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Inner" OutputDataTable="[JoinResult]">
+            <ui:JoinDataTables sap2010:Annotation.AnnotationText="The CustomerID column from the Customers sheet relates to the CustomerID column in the Orders sheet. In the wizard we define these two columns by using the column index for the first one, and the column name for the second one.  The Operation field is set to = (equals to)." DataTable1="[CustomersData]" DataTable2="[OrdersData]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="376,161" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Inner" OutputDataTable="[JoinResult]">
               <ui:JoinDataTables.Arguments>
                 <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
                   <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
@@ -99,63 +105,27 @@
                   </ui:JoinOperationArgument>
                 </scg:List>
               </ui:JoinDataTables.Arguments>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ui:JoinDataTables>
-            <ui:ExcelWriteRange AddHeaders="True" sap2010:Annotation.AnnotationText="Finally we write the result of the join in a new sheet." DataTable="[JoinResult]" DisplayName="Write Result" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Result" StartingCell="A1" />
+            <ui:ExcelWriteRange AddHeaders="True" sap2010:Annotation.AnnotationText="Finally we write the result of the join in a new sheet." DataTable="[JoinResult]" DisplayName="Write Result" sap:VirtualizedContainerService.HintSize="376,118" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Result" StartingCell="A1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ExcelWriteRange>
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
-    <sads:DebugSymbol.Symbol>dz9DOlxVc2Vyc1xVU1NSXERlc2t0b3BcMTguM1xKb2luIERhdGF0YWJsZXNcSm9pbiBEYXRhdGFibGVzLnhhbWwXPANtDgIBAUIFayACAQJC3QFC6wECAR1IC2gWAgEDSQ1YGAIBElkNZiECAQlnDWeeAgIBBEoPUCMCARhRD1cjAgETXj1eQAIBEWE+YUwCARBZgARZjgQCAQ5Z/gJZjAMCAQxZ4QJZ8gICAQpnlwJnmwICAQhnmQFnpwECAQZngQJniQICAQVKPkpPAgEbTRVNRAIBGkqvAUq6AQIBGVE+UUwCARZUFVREAgEVUakBUbEBAgEU</sads:DebugSymbol.Symbol>
   </Sequence>
-  <sap2010:WorkflowViewState.ViewStateManager>
-    <sap2010:ViewStateManager>
-      <sap2010:ViewStateData Id="ExcelReadRange_1" sap:VirtualizedContainerService.HintSize="314,59" />
-      <sap2010:ViewStateData Id="ExcelReadRange_2" sap:VirtualizedContainerService.HintSize="314,59" />
-      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="336,354">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="JoinDataTables_1" sap:VirtualizedContainerService.HintSize="336,161">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="ExcelWriteRange_1" sap:VirtualizedContainerService.HintSize="336,114">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="358,833">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="ExcelApplicationScope_1" sap:VirtualizedContainerService.HintSize="414,969">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="436,1150">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Join_Datatables_1" sap:VirtualizedContainerService.HintSize="476,1270" />
-    </sap2010:ViewStateManager>
-  </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>
